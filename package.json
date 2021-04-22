@@ -1,0 +1,59 @@
+{
+  "name": "nuxt-js-hasura-postgres",
+  "version": "1.0.0",
+  "description": "Nuxt.js with GraphQL Server by Hasura.",
+  "author": "YopiNoji",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:fix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
+    "prettier:format": "prettier '**/*.{js,jsx,ts,tsx,vue}' --write",
+    "codegen": "graphql-codegen --config codegen.yml -r dotenv/config"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "npm run lint",
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{css,vue}": "stylelint '**/*.{js,jsx,ts,tsx,vue}'  --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@auth0/auth0-spa-js": "^1.12.1",
+    "@nuxtjs/apollo": "^4.0.0-rc19",
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "apollo-cache-inmemory": "^1.6.5",
+    "graphql-tag": "^2.10.3",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.17.10",
+    "@graphql-codegen/schema-ast": "^1.17.8",
+    "@graphql-codegen/typescript-operations": "^1.17.8",
+    "@graphql-codegen/typescript-vue-apollo": "^2.1.0",
+    "@nuxt/typescript-build": "^0.6.0",
+    "@nuxtjs/eslint-config-typescript": "^1.0.0",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/stylelint-module": "^3.1.0",
+    "@nuxtjs/vuetify": "^1.11.2",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.0.0",
+    "lint-staged": "^10.0.0",
+    "prettier": "^1.19.1",
+    "stylelint": "^10.1.0"
+  }
+}
