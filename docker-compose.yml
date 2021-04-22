@@ -15,7 +15,7 @@ services:
     - "postgres"
     restart: always
     environment:
-      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
+      HASURA_GRAPHQL_DATABASE_URL: postgres://ykvhgkwpzbckvo:d883abff14544042ec29c2665ebfd4addcab8d6402cbfe58fa678bd0b4dc636e@ec2-3-233-7-12.compute-1.amazonaws.com:5432/di1unqinqpro2
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
       ## uncomment next line to set an admin secret
